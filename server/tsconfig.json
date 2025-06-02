@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "target": "ES6",                  // Modern JS features
+    "module": "commonjs",             // Compatible with Node.js
+    "rootDir": "./src",               // Source files will go here
+    "outDir": "./dist",               // Compiled JS output
+    "esModuleInterop": true,          // Allows import/export flexibility
+    "strict": true,                   // Strong type-checking (recommended)
+    "skipLibCheck": true              // Faster builds, skips type checking node_modules
+  }
+}
