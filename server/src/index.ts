@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import authRoutes from './routes/authRoutes';
 import dotenv from 'dotenv';
+import cookieParser from 'cookie-parser';
 
 // Loading .env file file variables (MONGO_URI, PORT, JWT_SECRET)
 dotenv.config();
@@ -13,6 +14,7 @@ const app = express()
 // Applying middlewears within the app instance
 app.use(cors());
 app.use(express.json())  // This allows backend to understand JSON request bodies
+app.use(cookieParser()); // This allows backend to understand cookies
 
 // Initialise the route to registering i.e. localhost/api/auth/<register> - route mentioned in the routes authRoute
 app.use('/api/auth', authRoutes);
