@@ -12,7 +12,12 @@ dotenv.config();
 const app = express()
 
 // Applying middlewears within the app instance
-app.use(cors());
+app.use(cors(
+    {
+    origin: 'http://localhost:3000', // your frontend
+    credentials: true,
+  }
+));
 app.use(express.json())  // This allows backend to understand JSON request bodies
 app.use(cookieParser()); // This allows backend to understand cookies
 
